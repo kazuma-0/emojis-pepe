@@ -3,12 +3,14 @@ const fs = require("fs");
 // const repoName = "/emoji-pays/";
 (async()=>{
     data = await getFiles("./emojis"); 
+    // console.log(data)
     let newA = data.map(x=>{
-        return  "/" + x.slice(x.indexOf("emojis"));
+        return  x.slice(x.indexOf("/emojis/"));
     })
     const writeArray = [];
     // console.log(newA)
     newA.forEach(element => {
+        // console.log(element)
         writeArray.push({
             emoji: element
         })
